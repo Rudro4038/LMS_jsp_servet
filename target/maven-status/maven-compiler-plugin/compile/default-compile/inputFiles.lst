@@ -1,0 +1,13 @@
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\DBTestServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\HomeServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\LogoutServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\TeacherDashboardServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\model\User.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\dao\CourseDAO.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\RegistrationServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\LoginServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\AdminDashboardServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\model\Course.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\controllers\StudentDashboardServlet.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\util\DatabaseConnection.java
+D:\Code\Java\Lab_project3\Lab_project3\src\main\java\com\weblab\dao\AuthDAO.java
