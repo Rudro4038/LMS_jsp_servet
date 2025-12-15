@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="WEB-INF/views/common/header.jsp" %>
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -43,5 +37,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+<%@ include file="WEB-INF/views/common/footer.jsp" %>

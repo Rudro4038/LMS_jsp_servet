@@ -1,12 +1,16 @@
 com\weblab\controllers\HomeServlet.class
+com\weblab\controllers\TeacherCoursesServlet.class
 com\weblab\controllers\StudentDashboardServlet.class
 com\weblab\dao\AuthDAO.class
 com\weblab\dao\CourseDAO.class
 com\weblab\controllers\DBTestServlet.class
 com\weblab\model\Course.class
+com\weblab\controllers\AdminCoursesServlet.class
 com\weblab\controllers\LogoutServlet.class
 com\weblab\util\DatabaseConnection.class
+com\weblab\controllers\StudentCoursesServlet.class
 com\weblab\model\User.class
+com\weblab\model\Enrollment.class
 com\weblab\controllers\AdminDashboardServlet.class
 com\weblab\controllers\RegistrationServlet.class
 com\weblab\controllers\LoginServlet.class
