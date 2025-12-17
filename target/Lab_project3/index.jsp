@@ -5,6 +5,7 @@
         min-height: calc(100vh - 200px);
         display: flex;
         align-items: center;
+        margin-top: 30px;
     }
     .welcome-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -30,6 +31,15 @@
     }
 </style>
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/"
+      >WebLab</a
+    >
+  </div>
+</nav>
+
 <div class="welcome-container">
     <div class="container">
         <div class="row">
@@ -41,10 +51,10 @@
                     <p>Manage courses, track enrollments, and enhance your learning experience.</p>
                     <div class="mt-4">
                         <a class="btn btn-light btn-lg" href="${pageContext.request.contextPath}/login.jsp" role="button">
-                            🔐 Login
+                            Login
                         </a>
                         <a class="btn btn-outline-light btn-lg" href="${pageContext.request.contextPath}/register.jsp" role="button">
-                            ✍️ Register
+                            Register
                         </a>
                     </div>
                 </div>

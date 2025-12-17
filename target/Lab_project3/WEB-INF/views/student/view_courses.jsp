@@ -94,7 +94,7 @@
 <div class="container mt-5">
     <!-- Page Header -->
     <div class="page-header">
-        <h2>📚 Course Registration & Enrollment</h2>
+        <h2> Course Registration & Enrollment</h2>
         <p class="mb-0"><%= "enrolled".equals(viewType) ? "Your enrolled courses" : "Browse available courses" %></p>
     </div>
 
@@ -102,18 +102,18 @@
     <div class="tab-buttons">
         <a href="${pageContext.request.contextPath}/student/courses" 
            class="btn <%= !"enrolled".equals(viewType) ? "btn-primary" : "btn-outline-primary" %>">
-            🔍 Available Courses
+             Available Courses
         </a>
         <a href="${pageContext.request.contextPath}/student/courses?action=enrolled" 
            class="btn <%= "enrolled".equals(viewType) ? "btn-primary" : "btn-outline-primary" %>">
-            ✅ My Enrolled Courses
+             My Enrolled Courses
         </a>
     </div>
 
     <!-- Alert Messages -->
     <% if (request.getAttribute("error") != null) { %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            ❌ <%= request.getAttribute("error") %>
+             <%= request.getAttribute("error") %>
             <button type="button" class="close" data-dismiss="alert">
                 <span>&times;</span>
             </button>
@@ -122,7 +122,7 @@
 
     <% if (request.getAttribute("message") != null) { %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            ✅ <%= request.getAttribute("message") %>
+             <%= request.getAttribute("message") %>
             <button type="button" class="close" data-dismiss="alert">
                 <span>&times;</span>
             </button>
@@ -138,7 +138,7 @@
                         <div class="card-body">
                             <div class="course-status">
                                 <% if ("enrolled".equals(viewType)) { %>
-                                    <span class="badge badge-success">✓ Enrolled</span>
+                                    <span class="badge badge-success"> Enrolled</span>
                                 <% } else { %>
                                     <% if (course.hasAvailableSeats()) { %>
                                         <span class="badge badge-warning">Available</span>
@@ -158,12 +158,12 @@
                             <hr>
                             <div class="mb-2">
                                 <small>
-                                    <strong>👨‍🏫 Teacher:</strong> <%= course.getTeacherName() != null ? course.getTeacherName() : "N/A" %>
+                                    <strong> Teacher:</strong> <%= course.getTeacherName() != null ? course.getTeacherName() : "N/A" %>
                                 </small>
                             </div>
                             <div class="mb-3">
                                 <small class="text-muted">
-                                    <strong>👥 Enrollment:</strong> <%= course.getEnrolledCount() %> / <%= course.getCapacity() %>
+                                    <strong> Enrollment:</strong> <%= course.getEnrolledCount() %> / <%= course.getCapacity() %>
                                 </small>
                             </div>
 
@@ -188,7 +188,7 @@
                                     <input type="hidden" name="courseId" value="<%= course.getId() %>">
                                     <button type="submit" class="btn btn-sm btn-danger w-100" 
                                             onclick="return confirm('Are you sure you want to drop this course?');">
-                                        🗑️ Drop Course
+                                         Drop Course
                                     </button>
                                 </form>
                             <% } else { %>
@@ -197,7 +197,7 @@
                                     <input type="hidden" name="courseId" value="<%= course.getId() %>">
                                     <button type="submit" class="btn btn-sm btn-success w-100" 
                                             <%= !course.hasAvailableSeats() ? "disabled" : "" %>>
-                                        ✓ Enroll Now
+                                         Enroll Now
                                     </button>
                                 </form>
                             <% } %>
@@ -211,9 +211,9 @@
         <div class="empty-state">
             <h4>
                 <% if ("enrolled".equals(viewType)) { %>
-                    📭 No Courses Enrolled
+                     No Courses Enrolled
                 <% } else { %>
-                    📭 No Courses Available
+                     No Courses Available
                 <% } %>
             </h4>
             <p class="text-muted">
@@ -230,7 +230,7 @@
     <!-- Back Button -->
     <div class="back-button">
         <a href="${pageContext.request.contextPath}/home/student" class="btn btn-secondary btn-lg">
-            ← Back to Dashboard
+             Back to Dashboard
         </a>
     </div>
 </div>

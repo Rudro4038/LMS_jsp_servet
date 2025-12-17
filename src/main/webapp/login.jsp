@@ -1,5 +1,14 @@
 <%@ include file="WEB-INF/views/common/header.jsp" %>
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/"
+      >WebLab</a
+    >
+  </div>
+</nav>
+
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -44,7 +53,7 @@
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-color px-5 mb-5 w-100">
-              📚 Login
+              Login
             </button>
           </div>
           <div id="emailHelp" class="form-text text-center mb-5 text-dark">

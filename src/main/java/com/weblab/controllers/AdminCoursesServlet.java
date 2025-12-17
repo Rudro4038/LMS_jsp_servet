@@ -3,6 +3,7 @@ package com.weblab.controllers;
 import com.weblab.dao.AuthDAO;
 import com.weblab.dao.CourseDAO;
 import com.weblab.model.Course;
+import com.weblab.model.Enrollment;
 import com.weblab.model.User;
 
 import javax.servlet.ServletException;
@@ -43,6 +44,10 @@ public class AdminCoursesServlet extends HttpServlet {
 
         if ("view".equals(action)) {
             viewAllCourses(req, resp);
+        } else if ("viewStudents".equals(action)) {
+            viewStudentsByCourse(req, resp);
+        } else if ("delete".equals(action)) {
+            deleteCourse(req, resp);
         } else {
             showAddCourseForm(req, resp);
         }
@@ -132,4 +137,59 @@ public class AdminCoursesServlet extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/views/admin/add_course.jsp").forward(req, resp);
         }
     }
-}
+
+    /**
+     * View all students enrolled in a specific course (Admin)
+     */
+    private void viewStudentsByCourse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String courseIdStr = req.getParameter("courseId");
+
+        if (courseIdStr == null || courseIdStr.trim().isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+            return;
+        }
+
+        try {
+            int courseId = Integer.parseInt(courseIdStr);
+            Course course = courseDAO.getCourseById(courseId);
+
+            if (course == null) {
+                req.setAttribute("error", "Course not found");
+                resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+                return;
+            }
+
+            java.util.List<Enrollment> enrollments = courseDAO.getStudentsByCourseAdmin(courseId);
+            req.setAttribute("course", course);
+            req.setAttribute("enrollments", enrollments);
+            req.getRequestDispatcher("/WEB-INF/views/admin/view_students.jsp").forward(req, resp);
+        } catch (NumberFormatException e) {
+            req.setAttribute("error", "Invalid course ID");
+            resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+        }
+    }
+
+    /**
+     * Delete a course (Admin only)
+     */
+    private void deleteCourse(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String courseIdStr = req.getParameter("courseId");
+
+        if (courseIdStr == null || courseIdStr.trim().isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+            return;
+        }
+
+        try {
+            int courseId = Integer.parseInt(courseIdStr);
+            boolean success = courseDAO.deleteCourse(courseId);
+
+            if (success) {
+                resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+            } else {
+                resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+            }
+        } catch (NumberFormatException e) {
+            resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
+        }
+    }

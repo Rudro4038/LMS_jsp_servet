@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- <%@ page import="com.weblab.model.User" %> -->
 <!DOCTYPE html>
 <html>
 <head>

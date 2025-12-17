@@ -148,7 +148,7 @@
     <div class="container mt-5">
         <!-- Page Header -->
         <div class="page-header">
-            <h2>👨‍🏫 My Courses</h2>
+            <h2>My Courses</h2>
             <p>View your taught courses and enrolled students</p>
         </div>
 
@@ -195,7 +195,7 @@
                                 <td class="text-center">
                                     <a href="${pageContext.request.contextPath}/teacher/courses?action=viewStudents&courseId=<%= course.getId() %>" 
                                        class="btn btn-sm btn-info btn-view-students">
-                                        👥 View Students
+                                         View Students
                                     </a>
                                 </td>
                             </tr>
@@ -222,7 +222,7 @@
         <!-- Back Button -->
         <div class="back-button">
             <a href="${pageContext.request.contextPath}/home/teacher" class="btn btn-secondary btn-lg">
-                ← Back to Dashboard
+                Back to Dashboard
             </a>
         </div>
     </div>

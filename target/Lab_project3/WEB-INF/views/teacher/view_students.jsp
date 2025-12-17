@@ -49,6 +49,23 @@
         background: #f9f9f9;
         border-radius: 5px;
     }
+    .go-back-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+    .go-back-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6);
+        color: white;
+        text-decoration: none;
+    }
 </style>
 
 <!-- Navigation -->
@@ -68,7 +85,7 @@
     </div>
 </nav>
 
-    <div class="container mt-5">
+<div class="container mt-5">
         
         <% if (course != null) { %>
             <!-- Course Header -->
@@ -93,7 +110,7 @@
 
             <!-- Students List -->
             <div class="mb-4">
-                <h3>(R-5: Registered Students in '<%= course.getName() %>')</h3>
+                <h3>Registered Students in '<%= course.getName() %>'</h3>
             </div>
 
             <% if (enrollments != null && !enrollments.isEmpty()) { %>
@@ -151,8 +168,8 @@
         <% } %>
 
         <!-- Back Button -->
-        <div class="mt-4">
-            <a href="${pageContext.request.contextPath}/teacher/courses" class="btn btn-secondary">
+        <div class="mt-4 mb-5">
+            <a href="${pageContext.request.contextPath}/teacher/courses" class="go-back-btn">
                 ← Back to Courses
             </a>
         </div>

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h5>📚 WebLab</h5>
+                <h5> WebLab</h5>
                 <p class="small">A comprehensive course management system for educational institutions.</p>
             </div>
             <div class="col-md-4">
@@ -18,8 +18,8 @@
                 <h5>Contact</h5>
                 <p class="small">
                     Email: support@weblab.edu<br>
-                    Phone: +1 (555) 123-4567<br>
-                    Address: 123 Education Ave, Learning City, LC 12345
+                    Phone: +880 123-4567<br>
+                    Address: IICT, SUST, SYLHET.
                 </p>
             </div>
         </div>

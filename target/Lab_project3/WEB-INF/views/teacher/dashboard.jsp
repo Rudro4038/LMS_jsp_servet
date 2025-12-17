@@ -113,7 +113,7 @@
 <div class="container mt-5">
     <!-- Dashboard Header -->
     <div class="dashboard-header">
-        <h1>🏫 Teacher Dashboard</h1>
+        <h1> Teacher Dashboard</h1>
         <p class="mb-0">Welcome, <%= user.getUsername() %>! Manage your courses and students here.</p>
     </div>
 
@@ -121,21 +121,21 @@
     <div class="row mb-4">
         <div class="col-md-4">
             <div class="stat-card">
-                <div class="stat-number">📚</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">Your Courses</div>
                 <p style="margin-top: 10px; font-size: 12px; color: #999;">View and manage all your assigned courses</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="stat-card">
-                <div class="stat-number">👥</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">Total Students</div>
                 <p style="margin-top: 10px; font-size: 12px; color: #999;">Monitor student enrollments across courses</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="stat-card">
-                <div class="stat-number">📊</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">Course Stats</div>
                 <p style="margin-top: 10px; font-size: 12px; color: #999;">View enrollment statistics and reports</p>
             </div>
@@ -146,8 +146,8 @@
     <div class="row">
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">📖</div>
-                <h5>My Courses (R-4)</h5>
+                <div class="feature-icon"></div>
+                <h5>My Courses </h5>
                 <p>View all courses assigned to you and manage enrollments</p>
                 <a href="${pageContext.request.contextPath}/teacher/courses" class="btn-feature">View Courses</a>
             </div>
@@ -155,7 +155,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">👨‍🎓</div>
+                <div class="feature-icon"></div>
                 <h5>Student List</h5>
                 <p>Select a course and view all enrolled students</p>
                 <a href="${pageContext.request.contextPath}/teacher/courses" class="btn-feature">View Students</a>
@@ -164,7 +164,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">📝</div>
+                <div class="feature-icon"></div>
                 <h5>Course Materials</h5>
                 <p>Upload and manage course materials for your students</p>
                 <a href="#" class="btn-feature">Manage Materials</a>
@@ -173,7 +173,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
+                <div class="feature-icon"></div>
                 <h5>Performance Reports</h5>
                 <p>View student performance and engagement metrics</p>
                 <a href="#" class="btn-feature">View Reports</a>
@@ -182,7 +182,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">📬</div>
+                <div class="feature-icon"></div>   
                 <h5>Messages & Announcements</h5>
                 <p>Communicate with students and make announcements</p>
                 <a href="#" class="btn-feature">Send Message</a>
@@ -191,7 +191,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
+                <div class="feature-icon"></div>
                 <h5>Course Settings</h5>
                 <p>Configure course details and enrollment policies</p>
                 <a href="#" class="btn-feature">Settings</a>
@@ -201,26 +201,26 @@
 
     <!-- Quick Actions -->
     <div class="quick-actions">
-        <h5 class="mb-3">⚡ Quick Actions</h5>
+        <h5 class="mb-3">Quick Actions</h5>
         <div class="row">
             <div class="col-md-6 col-lg-3 mb-3">
                 <a href="${pageContext.request.contextPath}/teacher/courses" class="btn btn-primary btn-block">
-                    📚 My Courses
+                 My Courses
                 </a>
             </div>
             <div class="col-md-6 col-lg-3 mb-3">
                 <a href="${pageContext.request.contextPath}/teacher/courses" class="btn btn-info btn-block">
-                    👥 View Students
+                 View Students
                 </a>
             </div>
             <div class="col-md-6 col-lg-3 mb-3">
                 <a href="#" class="btn btn-warning btn-block">
-                    📢 Make Announcement
+                 Make Announcement
                 </a>
             </div>
             <div class="col-md-6 col-lg-3 mb-3">
                 <a href="${pageContext.request.contextPath}/home" class="btn btn-secondary btn-block">
-                    ← Back to Home
+                    Back to Home
                 </a>
             </div>
         </div>

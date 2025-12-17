@@ -114,6 +114,64 @@ public class CourseDAO {
         return null;
     }
 
+    /**
+     * Delete a course (Admin only) - set status to inactive
+     */
+    public boolean deleteCourse(int courseId) {
+        String sql = "UPDATE courses SET status = 'inactive' WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, courseId);
+            int rowsUpdated = stmt.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("✓ Course deleted successfully: " + courseId);
+                return true;
+            }
+        } catch (SQLException e) {
+            System.err.println("ERROR in deleteCourse: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * Get all enrolled students for a course (Admin view)
+     */
+    public List<Enrollment> getStudentsByCourseAdmin(int courseId) {
+        List<Enrollment> enrollments = new ArrayList<>();
+        String sql = "SELECT e.id, e.student_id, u.name as student_name, u.email as student_email, " +
+                     "e.course_id, e.enrollment_date, e.status " +
+                     "FROM enrollments e " +
+                     "JOIN users u ON e.student_id = u.id " +
+                     "WHERE e.course_id = ? AND e.status = 'enrolled' " +
+                     "ORDER BY e.enrollment_date DESC";
+        
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, courseId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Enrollment enrollment = new Enrollment(
+                            rs.getInt("id"),
+                            rs.getInt("student_id"),
+                            rs.getInt("course_id"),
+                            rs.getTimestamp("enrollment_date"),
+                            rs.getString("status")
+                    );
+                    enrollment.setStudentName(rs.getString("student_name"));
+                    enrollment.setStudentEmail(rs.getString("student_email"));
+                    enrollments.add(enrollment);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("ERROR in getStudentsByCourseAdmin: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return enrollments;
+    }
+
     // ==================== TEACHER OPERATIONS ====================
 
     /**
