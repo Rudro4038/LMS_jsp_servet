@@ -193,3 +193,4 @@ public class AdminCoursesServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/admin/courses?action=view");
         }
     }
+}
